@@ -8,8 +8,8 @@ import java.net.Socket;
  * @author ${USER}
  * @create ${YEAR}-${MONTH}-${DAY}-${TIME}
  */
-public class Client {
-    public static void main(String[] args){
+public class SocketClient {
+    public Object send(RpcRequest rpcRequest){
 
         Socket socket = null;
         ObjectOutputStream outputStream = null;
@@ -17,10 +17,10 @@ public class Client {
         try {
             socket = new Socket(InetAddress.getLocalHost(), 50000);
             outputStream = new ObjectOutputStream(socket.getOutputStream());
-            outputStream.writeObject(new RpcRequest("method1"));
+            outputStream.writeObject(rpcRequest);
             inputStream = new ObjectInputStream(socket.getInputStream());
             Object o =  inputStream.readObject();
-            System.out.println(o);
+            return o;
         } catch (IOException e) {
             throw new RuntimeException(e);
         } catch (ClassNotFoundException e) {
