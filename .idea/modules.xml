@@ -5,14 +5,11 @@
       <module fileurl="file://$PROJECT_DIR$/testSocket/Message/Message.iml" filepath="$PROJECT_DIR$/testSocket/Message/Message.iml" />
       <module fileurl="file://$PROJECT_DIR$/MyRpc.iml" filepath="$PROJECT_DIR$/MyRpc.iml" />
       <module fileurl="file://$PROJECT_DIR$/test/Provider/Provider.iml" filepath="$PROJECT_DIR$/test/Provider/Provider.iml" />
-      <module fileurl="file://$PROJECT_DIR$/Proxy/Proxy.iml" filepath="$PROJECT_DIR$/Proxy/Proxy.iml" />
       <module fileurl="file://$PROJECT_DIR$/test/User/User.iml" filepath="$PROJECT_DIR$/test/User/User.iml" />
       <module fileurl="file://$PROJECT_DIR$/testSocket/client/client.iml" filepath="$PROJECT_DIR$/testSocket/client/client.iml" />
       <module fileurl="file://$PROJECT_DIR$/socket/rpcClient/rpcClient.iml" filepath="$PROJECT_DIR$/socket/rpcClient/rpcClient.iml" />
       <module fileurl="file://$PROJECT_DIR$/socket/rpcServer/rpcServer.iml" filepath="$PROJECT_DIR$/socket/rpcServer/rpcServer.iml" />
       <module fileurl="file://$PROJECT_DIR$/testSocket/server/server.iml" filepath="$PROJECT_DIR$/testSocket/server/server.iml" />
-      <module fileurl="file://$PROJECT_DIR$/socket/socket.iml" filepath="$PROJECT_DIR$/socket/socket.iml" />
-      <module fileurl="file://$PROJECT_DIR$/test/test.iml" filepath="$PROJECT_DIR$/test/test.iml" />
     </modules>
   </component>
 </project>

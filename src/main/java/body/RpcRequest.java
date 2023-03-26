@@ -1,3 +1,5 @@
+package body;
+
 import java.io.Serializable;
 
 /**
@@ -7,11 +9,13 @@ import java.io.Serializable;
 public class RpcRequest implements Serializable {
 
     static final long serialVersionUID = 654351342L;
+    String interfaceName;
     String methodName;
     Object[] parameterValues;
     Class[] parameterTypes;
 
-    public RpcRequest(String methodName, Object[] parameterValues, Class[] parameterTypes) {
+    public RpcRequest(String interfaceName, String methodName, Object[] parameterValues, Class[] parameterTypes) {
+        this.interfaceName = interfaceName;
         this.methodName = methodName;
         this.parameterValues = parameterValues;
         this.parameterTypes = parameterTypes;
@@ -27,5 +31,9 @@ public class RpcRequest implements Serializable {
 
     public Class[] getParameterTypes() {
         return parameterTypes;
+    }
+
+    public String getInterfaceName() {
+        return interfaceName;
     }
 }

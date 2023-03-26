@@ -1,3 +1,8 @@
+package transport.socket;
+
+import body.RpcRequest;
+import register.RegisterCenter;
+
 import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
@@ -9,13 +14,17 @@ import java.net.Socket;
  * @create ${YEAR}-${MONTH}-${DAY}-${TIME}
  */
 public class SocketClient {
-    public Object send(RpcRequest rpcRequest){
+    public Object send(RpcRequest rpcRequest) throws Exception {
 
         Socket socket = null;
         ObjectOutputStream outputStream = null;
         ObjectInputStream inputStream = null;
+        String host=RegisterCenter.getService(rpcRequest.getInterfaceName());
+        String ip=host.split(":")[0];
+        int port= Integer.parseInt(host.split(":")[1]);
+        InetAddress address = InetAddress.getByName(ip);
         try {
-            socket = new Socket(InetAddress.getLocalHost(), 50000);
+            socket = new Socket(address, port);
             outputStream = new ObjectOutputStream(socket.getOutputStream());
             outputStream.writeObject(rpcRequest);
             inputStream = new ObjectInputStream(socket.getInputStream());
