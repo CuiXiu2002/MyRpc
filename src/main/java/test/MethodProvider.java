@@ -1,6 +1,7 @@
 package test;
 
 import register.RegisterCenter;
+import transport.netty.NettyServer;
 import transport.socket.SocketServer;
 
 import java.net.InetAddress;
@@ -19,7 +20,8 @@ public class MethodProvider {
         String serviceName=service.getClass().getInterfaces()[0].toString().split("interface ")[1];
         serviceMap.put(serviceName,service);
         RegisterCenter.registerService(serviceName, ip.substring(ip.lastIndexOf("/")+1));
-        SocketServer.accept();
+     //   SocketServer.accept();
+        new NettyServer();
     }
     public static Object getService(String name){
         return serviceMap.get(name);

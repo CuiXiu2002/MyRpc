@@ -1,6 +1,7 @@
 package body;
 
 import java.io.Serializable;
+import java.util.Arrays;
 
 /**
  * @author Lenovo
@@ -35,5 +36,15 @@ public class RpcRequest implements Serializable {
 
     public String getInterfaceName() {
         return interfaceName;
+    }
+
+    @Override
+    public String toString() {
+        return "RpcRequest{" +
+                "interfaceName='" + interfaceName + '\'' +
+                ", methodName='" + methodName + '\'' +
+                ", parameterValues=" + Arrays.toString(parameterValues) +
+                ", parameterTypes=" + Arrays.toString(parameterTypes) +
+                '}';
     }
 }

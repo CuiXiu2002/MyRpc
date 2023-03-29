@@ -1,6 +1,7 @@
 package proxy;
 
 import body.RpcRequest;
+import transport.netty.NettyClient;
 import transport.socket.SocketClient;
 
 import java.lang.reflect.InvocationHandler;
@@ -21,8 +22,10 @@ public class UserProxy implements InvocationHandler {
     @Override
     public Object invoke(Object proxy, Method method, Object[] args) throws Throwable {
         RpcRequest rpcRequest = new RpcRequest(method.getDeclaringClass().getName(),method.getName(), args, method.getParameterTypes());
-        SocketClient socketClient = new SocketClient();
-        Object res=socketClient.send(rpcRequest);
+//        SocketClient socketClient = new SocketClient();
+//        Object res=socketClient.send(rpcRequest);
+        NettyClient nettyClient = new NettyClient();
+        Object res=nettyClient.sendRequest(rpcRequest);
         return res;
     }
 }
